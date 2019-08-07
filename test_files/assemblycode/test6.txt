@@ -1,0 +1,21 @@
+A: .WORD 377
+B: .WORD 1
+C: .WORD -2
+D: .WORD -3
+
+START:
+		MOV D, R3
+		INC R3
+		BR ONE 
+ONE:
+		MOV C, R1
+		MOV D, R2
+		DEC R1
+		CMP R1, R2
+		BLT TWO
+TWO:
+		MOV B, R4
+		ASL R4
+		ROL R4
+		HALT
+			

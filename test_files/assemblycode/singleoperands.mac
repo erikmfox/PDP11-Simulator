@@ -1,0 +1,11 @@
+A: .WORD 077777
+B: .WORD 000001
+START:   DEC B     ;//decrements word to 000000
+	 NEG B     ;//Negates B word to 177777
+ 	
+         TST B     ;//B should be 17777:7 still since not < 0 
+	 COM A     ;// logical complement of 077777 is 100000 
+         ADC R2    ;// Adds carry order into R2
+         CLR R2    ;clear the register 
+         INC R2    ;// Increments R2
+	 HALT;

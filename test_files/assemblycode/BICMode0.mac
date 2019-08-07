@@ -1,0 +1,17 @@
+;BIC
+A: .WORD 000005
+B: .WORD 000001
+;BIC    04SSDD
+;BICB   14SSDD
+;       N set if high order bit of result set; cleared otherwise
+;      Z set if result = 0; cleared otherwise
+;      V cleared
+;      C not affected
+; clears each bit in DD corresponding to set bit in SS 
+START:  MOV A,R1 
+        DEC R1   ; decrement 
+        BIC A,R1;  04SSDD, result should be 1
+        ADD R1,#5;
+        BICB A,R1; 14SSDD, result should be 2  
+        MOV R1,B;
+        HALT;

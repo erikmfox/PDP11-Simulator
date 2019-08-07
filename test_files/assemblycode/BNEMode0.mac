@@ -1,0 +1,8 @@
+A: .WORD 000001
+B: .WORD 000001
+;BNE Branch if not equal (to zero)
+START:  MOV A,R1 
+WHILE:  DEC R1   ; decrement 
+        BNE WHILE;  001+(offset)
+        MOV R1,A;
+        HALT;

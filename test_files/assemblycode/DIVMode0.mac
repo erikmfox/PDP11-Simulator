@@ -1,0 +1,13 @@
+;DIV
+A: .WORD 000066
+B: .WORD 000001
+;DIV    071RSS
+;       N set if product is < 0; cleared otherwise 
+;      Z set if result = 0; cleared otherwise
+;      V set if source = 0 or if the absolute value of the register is larger than the absolute value of the source (in this case the instruction is aborted because the quotient would exceed 15 bits), or set if the quotient results in the most negative number (100000) and the XOR of the signs of the operands = 0
+;      C is set if divide by zero attempted, cleared otherwise
+; contents from R and SS are divided, stored in register
+START:  MOV A,R1 
+        DIV #2,R1; 071RSS 
+        MOV R1,B;
+        HALT

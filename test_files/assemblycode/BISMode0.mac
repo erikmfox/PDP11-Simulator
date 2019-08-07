@@ -1,0 +1,21 @@
+;BIS
+A: .WORD 000001
+B: .WORD 000001
+;BIS    05SSDD
+;BISB1  15SSDD
+;       N set if high order bit of result set; cleared otherwise
+;      Z set if result = 0; cleared otherwise
+;      V cleared
+;      C not affected
+; XOR between SS and DD
+START:  MOV A,R1 
+        DEC R1   ; decrement 
+        BIS R1,A;  05SSDD, result should be false
+                ;  because R1 has been decremented;
+                ;  Z - set 
+        INC R1;
+        INC R1; 
+        BISB R1,A; 15SSDD, result should be true
+                 ; because of increments
+        MOV R1,A;
+        HALT;

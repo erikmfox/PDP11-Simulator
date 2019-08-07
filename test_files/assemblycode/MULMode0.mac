@@ -1,0 +1,13 @@
+;MUL
+A: .WORD 000005
+B: .WORD 000001
+;MUL    070RSS
+;       N set if product is < 0; cleared otherwise 
+;      Z set if result = 0; cleared otherwise
+;      V cleared
+;      C is set if result is less than 2^-15, or greater than/ = 2^15-1
+; contents from SS and DD are multipled, stored in register
+START:  MOV A,R1 
+        MUL #10,R1; 070RSS 
+        MOV R1,B;
+        HALT

@@ -1,0 +1,8 @@
+;PCAddrImm
+A: .WORD 000066
+B: .WORD 000001
+;PCAddrImm    Use of operand #n
+START:  MOV R1,#66 
+        DIV #2,R1; 071RSS 
+        MOV R1,B;
+        HALT

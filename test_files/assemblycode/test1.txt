@@ -1,0 +1,24 @@
+A: .WORD 077777
+B: .WORD 1
+C: .WORD 2
+
+START:
+		MOV A, R1
+		MOV B, R2
+		ADD R1, R2
+		ADC R2
+		BR ONE 
+ONE:
+		MOV B, R3
+		SWAB R1
+		CMPB R3, R1
+		BMI TWO
+TWO:
+		CLR (R4)
+		CLR (R5)
+		MOV B, (R4)
+		MOV C, (R5)
+		ADD (R4), (R5)
+		ADC (R5)
+		HALT
+			

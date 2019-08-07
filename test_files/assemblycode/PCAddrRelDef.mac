@@ -1,0 +1,10 @@
+;PCAddrRelDef
+A: .WORD 000066
+B: .WORD 000001
+;PCAddrRelDef    Use of operand @a
+; an extra word in the instruction is added to PC+2 
+;to give the address of the address
+START:  MOV R1,@000000 
+        DIV #2,R1; 071RSS 
+        MOV R1,B;
+        HALT

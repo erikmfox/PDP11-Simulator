@@ -1,0 +1,13 @@
+;ASH
+A: .WORD 001234
+B: .WORD 000001
+;ASH    072RSS
+;       N set if product is < 0; cleared otherwise 
+;       Z set if result = 0; cleared otherwise
+;       V set if sign of the register changed during the shift; cleared otherwise 
+;       C loaded from last shifted out of register
+; contents are shifted right or left by source op. coount is taken as the low order 6 bits of the source op. neg is right shift, pos is left shift 
+START:  MOV A,R1 
+        ASH #3,R1; 072RSS; expected value of 012340 
+        MOV R1,B;
+        HALT

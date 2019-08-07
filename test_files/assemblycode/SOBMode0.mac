@@ -1,0 +1,15 @@
+A: .WORD 000001
+B: .WORD 000005
+;SOB Branch  
+;SOB 077 + offset
+;When register is decremented if Reg is not 0
+;twice the offset is substracted from PC
+;in this example, it will not 0, therefore substract 2 x offset 
+;B can be substituted A to prevent the substract 2 X offset
+START:  MOV B,R1 
+WHILE:  ;INC R1   ; increment
+        ;INC R1   ; increment
+
+        SOB R1,WHILE; 077 + register
+        MOV R1,B;
+        HALT;

@@ -1,0 +1,20 @@
+;BIT
+A: .WORD 000001
+B: .WORD 000001
+;BIT    03SSDD
+;BITB   13SSDD
+;       N set if high order bit of result set; cleared otherwise
+;      Z set if result = 0; cleared otherwise
+;      V cleared
+;      C not affected
+; Logical AND between SS and DD
+START:  MOV A,R1 
+        ;DEC R1   ; decrement 
+        BIT R1,A;  03SSDD, result should be true
+                ;  because same value 
+        INC R1;
+        INC R1; 
+        BITB R1,A; 13SSDD, result should be false
+                 ; because of increments
+        MOV R1,A;
+        HALT;

@@ -1,0 +1,11 @@
+A: .WORD 000001
+B: .WORD 000001
+;BGE Branch if greater than or equal (to zero)
+;signed conditional branch
+;BGE 002
+;
+START:  MOV A,R1 
+WHILE:  DEC R1   ; decrement 
+        BGE WHILE;  002+(offset)
+        MOV R1,A;
+        HALT;

@@ -1,0 +1,10 @@
+A: .WORD 000001
+B: .WORD 000005
+;BHIS Branch same as BCC, for unsigned comparisons 
+;unsigned conditional branch
+START:  MOV B,R1 
+WHILE:  CMP R1,#1; 
+        BHIS WHILE;  103+(offset)
+        MOV R1,B;
+        HALT;
+

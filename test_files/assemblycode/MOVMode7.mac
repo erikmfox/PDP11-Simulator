@@ -1,0 +1,11 @@
+A: .WORD 000005
+B: .WORD 000001
+;Index Deferred Mode
+START:  MOV A,@1000(R1); expect instruction octal code : B1SSDD : 016771
+                ; 0 001 110 111 111 001
+        MOVB B,@1000(R1); expect instruction octal code : B1SSDD : 116771
+                ; 1 001 110 111 111 001
+        
+
+
+        HALT;

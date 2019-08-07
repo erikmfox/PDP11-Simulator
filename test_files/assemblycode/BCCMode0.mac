@@ -1,0 +1,8 @@
+A: .WORD 000001
+B: .WORD 000001
+;BCC Branch on carry clear
+START:  MOV A,R1 
+WHILE:  DEC R1   ; decrement 
+        BCC WHILE;  001+(offset)
+        MOV R1,A;
+        HALT;

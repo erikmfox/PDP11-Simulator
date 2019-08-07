@@ -1,0 +1,12 @@
+A: .WORD 000001
+B: .WORD 000005
+;BHI Branch if previous operation caused neither a carry nor zero result 
+;unsigned conditional branch
+;BHI 101
+;
+START:  MOV A,R1 
+WHILE:  DEC R1   ; decrement
+        CMP R1,#5;compare so next instruction can check C and Z flags 
+        BHI WHILE; 101+(offset)
+        MOV R1,A;
+        HALT;

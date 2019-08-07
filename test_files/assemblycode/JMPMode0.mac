@@ -1,0 +1,10 @@
+A: .WORD 000001
+B: .WORD 000005
+;JMP Branch  
+;JMP 0001DD
+
+START:  MOV B,R1 
+WHILE:  DEC R1   ; decrement
+        JMP WHILE; 0001+DD
+        MOV R1,B;
+        HALT;

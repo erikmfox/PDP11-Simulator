@@ -1,0 +1,15 @@
+;ASHC
+A: .WORD 001234
+B: .WORD 001001
+C: .WORD 000000
+;ASHC   073RSS
+;       N set if product is < 0; cleared otherwise 
+;       Z set if result = 0; cleared otherwise
+;       V set if sign of the register changed during the shift; cleared otherwise 
+;       C loaded with high order bit when left shift; loaded with low order bit when right shift (loaded with the last bit shifted oout of the 32-bit operand)
+; two registers are treated as a Double Word combined and shifted according to value N.  
+START:  MOV A,R1 
+        MOV B,R2 
+        ASHC #3,R1,R2; 073RSS;  
+        MOV R1,C;
+        HALT

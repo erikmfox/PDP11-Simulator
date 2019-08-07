@@ -1,0 +1,9 @@
+;PCAddrAbs
+A: .WORD 000066
+B: .WORD 000001
+;PCAddrAbs    Use of operand @#n
+;The absolute address is contained in the instruction
+START:  MOV R1,@#000000 ;PC = 000000 the value of A is stored here 
+        DIV #2,R1; 071RSS 
+        MOV R1,B;
+        HALT

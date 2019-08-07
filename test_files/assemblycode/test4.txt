@@ -1,0 +1,18 @@
+A: .BYTE 377
+B: .BYTE 1
+C: .BYTE 2
+D: .BYTE 3
+
+START:
+		MOV D, R4
+		ASRB R4
+		BLOS ONE 
+ONE:
+		MOV B, R3
+		MOV A, R2
+		ADD R2, R3
+		BVS TWO
+TWO:
+		MOV A, @10(R1)
+		HALT
+			

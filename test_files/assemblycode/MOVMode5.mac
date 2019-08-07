@@ -1,0 +1,11 @@
+A: .WORD 000005
+B: .WORD 000001
+
+START:  MOV A,@-(R1); expect instruction octal code : B1SSDD : 016751
+                ; 0 001 110 111 101 001
+        MOVB B,@-(R1); expect instruction octal code : B1SSDD : 116751
+                ; 1 001 110 111 101 001
+        
+
+
+        HALT;

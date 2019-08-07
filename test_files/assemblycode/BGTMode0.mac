@@ -1,0 +1,12 @@
+A: .WORD 000001
+B: .WORD 000005
+;BGT Branch if greater than (zero)
+;signed conditional branch
+;BGT 003
+;
+START:  MOV A,R1 
+WHILE:  DEC R1   ; decrement, expected result is false
+                 ; if changed to increment, result is true
+        BGT WHILE;  003+(offset)
+        MOV R1,A;
+        HALT;

@@ -1,0 +1,8 @@
+A: .WORD 000007
+B: .WORD 000001
+;BPL Branch N is a positive result
+START:  MOV A,R1 
+WHILE:  DEC R1   ; decrement 
+        BPL WHILE;  100+(offset)
+        MOV R1,A;
+        HALT;

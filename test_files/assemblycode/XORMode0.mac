@@ -1,0 +1,16 @@
+;XOR
+A: .WORD 001234
+B: .WORD 001111
+C: .WORD 000000
+;XOR    074RSS
+;       N set if product is < 0; cleared otherwise 
+;       Z set if result = 0; cleared otherwise
+;       V cleared
+;       C unaffected
+;Exclusive OR of the register and destination
+; operand is stored in the destination. contents unaffected.
+START:  MOV A,R1 
+        MOV B,R2 
+        XOR R1,R2; 074RSS; result R1 = 012340 ; R2 = 000325 
+        MOV R1,C;
+        HALT
